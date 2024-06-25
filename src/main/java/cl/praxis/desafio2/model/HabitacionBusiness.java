@@ -1,4 +1,4 @@
 package cl.praxis.desafio2.model;
 
-public class HabitacionBussiness {
+public class HabitacionBusiness {
 }
