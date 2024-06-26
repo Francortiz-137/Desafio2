@@ -1,5 +1,6 @@
 <%@ page import="java.time.LocalDate" %>
-<%@ page import="cl.praxis.desafio2.model.HabitacionBusiness" %><%--
+<%@ page import="cl.praxis.desafio2.model.HabitacionBusiness" %>
+<%@ page import="java.time.format.DateTimeParseException" %><%--
   Created by IntelliJ IDEA.
   User: Ancort
   Date: 25-06-2024
@@ -23,7 +24,13 @@
         String emailComprador = request.getParameter("email");
         String medioPagoComprador = request.getParameter("medioPago");
         String fechaEntrada = request.getParameter("fechaEntrada");
-        String fechaMostrar = habitacionBusiness.formatearFecha(LocalDate.parse(fechaEntrada));
+        String fechaMostrar;
+        try{
+            fechaMostrar = habitacionBusiness.formatearFecha(LocalDate.parse(fechaEntrada));
+        } catch(DateTimeParseException e){
+            e.printStackTrace();
+        }
+
         int dias = Integer.parseInt(request.getParameter("dias"));
         int valorPagar;
         try{
