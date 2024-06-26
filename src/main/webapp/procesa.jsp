@@ -18,6 +18,8 @@
         String nombreComprador = request.getParameter("nombre");
         String apellidoComprador = request.getParameter("apellido");
         String direccionComprador = request.getParameter("email");
+
+
     %>
     <div class="container mt-4">
         <h2>Detalle Solicitud Habitacion:</h2>
@@ -33,7 +35,7 @@
             <tr>
                 <th scope="row">1</th>
                 <td>Nombre</td>
-                <td>Arturo Erasmo</td>
+                <td><%= request.getAttribute("nombre") %>Arturo Erasmo</td>
             </tr>
             <tr>
                 <th scope="row">2</th>
@@ -71,5 +73,7 @@
 
     <!-- Enlace a Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<%@include file="assets/html/footer.jsp"%>
+
 </body>
 </html>

@@ -1,5 +1,13 @@
+<%@ page import="cl.praxis.desafio2.model.HabitacionBusiness" %>
+<%@ page import="cl.praxis.desafio2.model.Habitacion" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
+<%
+    HabitacionBusiness habitacionBusiness = new HabitacionBusiness();
+    List<Habitacion> habitacionList = habitacionBusiness.getHabitaciones();
+%>
 
 <!DOCTYPE html>
 <html>
@@ -12,131 +20,53 @@
         <p>Habitaciones Disponibles</p>
     </section>
     <br/>
+
     <form method="post" action="procesa.jsp">
-        <section>
-            <div class="container mt-4">
-                <h2>Habitaciones Disponibles (8)</h2>
-                <hr>
-                <div class="row">
-                    <div class="col-md-3 mb-4">
-                        <div class="card h-100" style="width: 18rem;">
-                            <img class=class="card-img-top" src="assets/img/h3.jpg" alt="Habitacion 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación 1, Simple</h5>
-                                <p class="card-text">Habitación clásica con cama extragrande, vistas al océano y balcón</p>
-                                <p>CL$ 10000</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                    </label>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row justify-content-center">
+                    <h2>
+                        Habitaciones Disponibles
+                        (<%=habitacionList.size()%>)
+                    </h2>
+                    <hr/>
+                </div>
+                <div
+                        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3
+row-cols-xl-4 justify-content-center">
+                    <%
+                        for (int x = 0; x < habitacionList.size(); x++) {
+                    %>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img class="card-img-top"
+
+                                 src="<%=habitacionList.get(x).getImagen()%>"
+
+                                 alt="<%=habitacionList.get(x).getNombre()%>" />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fwbolder"><%=habitacionList.get(x).getNombre()%></h5>
+
+                                    <p><%=habitacionList.get(x).getDescripcion()%></p>
+                                    CL$
+
+                                    <%=habitacionList.get(x).getPrecio()%>
                                 </div>
+                            </div>
+                            <input type="radio" id="html"
+                                   name="idevento"
+
+                                   value="<%=habitacionList.get(x).getId()%>" checked>
+                            <div class="card-footer p-4 pt-0
+border-top-0 bg-transparent">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card h-100" style="width: 18rem;">
-                            <img class=class="card-img-top" src="assets/img/h2.png" alt="Habitacion 2">
-                            <div class="card-body">                                <h5 class="card-title">Habitación 2, Doble - Simple</h5>
-                                <p class="card-text">Habitación clásica con 2 camas grandes o dobles, vistas al océano y balcón</p>
-                                <p>CL$ 20000</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card h-100" style="width: 18rem;">
-                            <img class=class="card-img-top" src="assets/img/h3.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación 3, Doble - Normal</h5>
-                                <p class="card-text">Habitación Superior en planta alta con vistas al océano y 2 camas dobles</p>
-                                <p>CL$ 30000</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                                    <label class="form-check-label" for="flexRadioDefault3">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card h-100" style="width: 18rem;">
-                            <img class=class="card-img-top" src="assets/img/h5.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación 4, Doble - King</h5>
-                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
-                                <p>CL$ 40000</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-                                    <label class="form-check-label" for="flexRadioDefault4">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card h-100" style="width: 18rem;">
-                            <img class=class="card-img-top" src="assets/img/h5.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación 5, Doble - King</h5>
-                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
-                                <p>CL$ 50000</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
-                                    <label class="form-check-label" for="flexRadioDefault5">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card h-100" style="width: 18rem;">
-                            <img class=class="card-img-top" src="assets/img/h5.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación 6, Doble - King</h5>
-                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
-                                <p>CL$ 60000</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
-                                    <label class="form-check-label" for="flexRadioDefault6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card h-100" style="width: 18rem;">
-                            <img class=class="card-img-top" src="assets/img/h4.png" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación 7, Doble - King</h5>
-                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
-                                <p>CL$ 70000</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault7">
-                                    <label class="form-check-label" for="flexRadioDefault7">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <div class="card h-100" style="width: 18rem;">
-                            <img class=class="card-img-top" src="assets/img/h3.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Habitación 8, Doble - King</h5>
-                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
-                                <p>CL$ 80000</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8">
-                                    <label class="form-check-label" for="flexRadioDefault8">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </section>
@@ -144,17 +74,15 @@
         <section  class="container mt-4 pb-5">
             <h2>Informacion de Reserva Habitacion</h2>
             <hr>
-
-
             <!-- Primera fila: Nombre, Apellido -->
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                 </div>
                 <div class="col-md-6">
                     <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
                 </div>
             </div>
 
@@ -162,13 +90,13 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-4">
                             <label for="medioPago" class="form-label">Medio de Pago</label>
-                            <select id="medioPago" class="form-select">
+                            <select id="medioPago" name="medioPago" class="form-select">
                                 <option selected>Elige...</option>
                                 <option value="tarjeta">Tarjeta de Crédito</option>
                                 <option value="paypal">PayPal</option>
@@ -177,11 +105,11 @@
                         </div>
                         <div class="col-md-4">
                             <label for="dias" class="form-label">Días</label>
-                            <input type="number" class="form-control" id="dias" placeholder="Número de días">
+                            <input type="number" class="form-control" id="dias" name="dias" placeholder="Número de días">
                         </div>
                         <div class="col-md-4">
                             <label for="fechaEntrada" class="form-label">Fecha de Entrada</label>
-                            <input type="date" class="form-control" id="fechaEntrada">
+                            <input type="date" class="form-control" id="fechaEntrada" name="fechaEntrada">
                         </div>
                     </div>
                 </div>
