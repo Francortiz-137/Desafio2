@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="cl.praxis.desafio2.model.HabitacionBusiness" %><%--
   Created by IntelliJ IDEA.
   User: Ancort
   Date: 25-06-2024
@@ -15,11 +16,14 @@
         <h3>Habitaciones Disponibles</h3>
     </section>
     <%
+        HabitacionBusiness habitacionBusiness = new HabitacionBusiness();
+
         String nombreComprador = request.getParameter("nombre");
         String apellidoComprador = request.getParameter("apellido");
         String emailComprador = request.getParameter("email");
         String medioPagoComprador = request.getParameter("medioPago");
         String fechaEntrada = request.getParameter("fechaEntrada");
+        String fechaMostrar = habitacionBusiness.formatearFecha(LocalDate.parse(fechaEntrada));
         int dias = Integer.parseInt(request.getParameter("dias"));
         int valorPagar;
         try{
@@ -68,7 +72,7 @@
             <tr>
                 <th scope="row">6</th>
                 <td>Fecha Entrada</td>
-                <td><%= fechaEntrada %></td>
+                <td><%= fechaMostrar %></td>
             </tr>
             <tr>
                 <th scope="row">7</th>

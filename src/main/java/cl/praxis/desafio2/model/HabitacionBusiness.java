@@ -2,6 +2,8 @@ package cl.praxis.desafio2.model;
 
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,7 +96,7 @@ public class HabitacionBusiness{
         rooms.add(room6);
         rooms.add(room7);
         rooms.add(room8);
-        
+
         // Retorno de lista de rooms
         return rooms;
     }
@@ -110,10 +112,10 @@ public class HabitacionBusiness{
         return room;
     }
 
-    public int calculaValorCompra(int valorRoom, int cantidadDias)
+    public String formatearFecha(LocalDate fecha)
     {
-        int valor = valorRoom * cantidadDias;
-        return valor;
+        DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy", new java.util.Locale("es", "ES"));
+        return fecha.format(formatter);
     }
 }
 
