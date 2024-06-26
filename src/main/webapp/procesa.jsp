@@ -24,15 +24,20 @@
         String emailComprador = request.getParameter("email");
         String medioPagoComprador = request.getParameter("medioPago");
         String fechaEntrada = request.getParameter("fechaEntrada");
-        String fechaMostrar;
+        String fechaMostrar = "";
+        int dias = 0;
+        int valorPagar;
+
         try{
             fechaMostrar = habitacionBusiness.formatearFecha(LocalDate.parse(fechaEntrada));
         } catch(DateTimeParseException e){
             e.printStackTrace();
         }
-
-        int dias = Integer.parseInt(request.getParameter("dias"));
-        int valorPagar;
+        try{
+            dias = Integer.parseInt(request.getParameter("dias"));
+        } catch(NumberFormatException e){
+            e.printStackTrace();
+        }
         try{
             valorPagar = Integer.parseInt(request.getParameter("valorPagar"));
 
