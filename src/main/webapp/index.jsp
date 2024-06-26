@@ -55,10 +55,9 @@ row-cols-xl-4 justify-content-center">
                                     <%=habitacionList.get(x).getPrecio()%>
                                 </div>
                             </div>
-                            <input type="radio" id="html"
-                                   name="idevento"
-
-                                   value="<%=habitacionList.get(x).getId()%>" checked>
+                            <input type="radio" id="valorPagar"
+                                   name="valorPagar"
+                                   value="<%=habitacionList.get(x).getPrecio()%>">
                             <div class="card-footer p-4 pt-0
 border-top-0 bg-transparent">
                             </div>

@@ -17,10 +17,18 @@
     <%
         String nombreComprador = request.getParameter("nombre");
         String apellidoComprador = request.getParameter("apellido");
-        String direccionComprador = request.getParameter("email");
+        String emailComprador = request.getParameter("email");
+        String medioPagoComprador = request.getParameter("medioPago");
+        String fechaEntrada = request.getParameter("fechaEntrada");
+        int dias = Integer.parseInt(request.getParameter("dias"));
+        int valorPagar;
+        try{
+            valorPagar = Integer.parseInt(request.getParameter("valorPagar"));
 
-
-    %>
+        } catch (NumberFormatException e) {
+            valorPagar = 0;
+        }
+        %>
     <div class="container mt-4">
         <h2>Detalle Solicitud Habitacion:</h2>
         <table class="table table-striped">
@@ -35,37 +43,37 @@
             <tr>
                 <th scope="row">1</th>
                 <td>Nombre</td>
-                <td><%= request.getAttribute("nombre") %>Arturo Erasmo</td>
+                <td><%= nombreComprador %></td>
             </tr>
             <tr>
                 <th scope="row">2</th>
                 <td>Apellido</td>
-                <td>Vidal Pardo</td>
+                <td><%= apellidoComprador %></td>
             </tr>
             <tr>
                 <th scope="row">3</th>
                 <td>Email</td>
-                <td>arturo.vidal@anfp.cl</td>
+                <td><%= emailComprador %></td>
             </tr>
             <tr>
                 <th scope="row">4</th>
                 <td>Medio Pago</td>
-                <td>Contado</td>
+                <td><%= medioPagoComprador %></td>
             </tr>
             <tr>
                 <th scope="row">5</th>
                 <td>Días</td>
-                <td>2 días</td>
+                <td><%= dias %></td>
             </tr>
             <tr>
                 <th scope="row">6</th>
                 <td>Fecha Entrada</td>
-                <td>5 de Enero de 2023</td>
+                <td><%= fechaEntrada %></td>
             </tr>
             <tr>
                 <th scope="row">7</th>
                 <td>Valor a Pagar</td>
-                <td>CL$ 160000</td>
+                <td><strong>CL$ <%=valorPagar%></strong></td>
             </tr>
             </tbody>
         </table>
