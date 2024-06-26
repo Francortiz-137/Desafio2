@@ -8,13 +8,12 @@
 <%@include file="assets/html/header.jsp"%>
 <main>
     <section class="bg-dark text-white text-center py-5">
-        <h1>Resevas Hotel Sheraton Miramar</h1>
+        <h1>Reservas Hotel Sheraton Miramar</h1>
         <p>Habitaciones Disponibles</p>
     </section>
     <br/>
     <form method="post" action="procesa.jsp">
         <section>
-
             <div class="container mt-4">
                 <h2>Habitaciones Disponibles (8)</h2>
                 <hr>
@@ -52,8 +51,8 @@
                         <div class="card h-100" style="width: 18rem;">
                             <img class=class="card-img-top" src="assets/img/h3.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Habitación 3, Simple</h5>
-                                <p class="card-text">Habitación clásica con cama extragrande, vistas al océano y balcón</p>
+                                <h5 class="card-title">Habitación 3, Doble - Normal</h5>
+                                <p class="card-text">Habitación Superior en planta alta con vistas al océano y 2 camas dobles</p>
                                 <p>CL$ 30000</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
@@ -67,8 +66,8 @@
                         <div class="card h-100" style="width: 18rem;">
                             <img class=class="card-img-top" src="assets/img/h5.png" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Habitación 4, Simple</h5>
-                                <p class="card-text">Habitación clásica con cama extragrande, vistas al océano y balcón</p>
+                                <h5 class="card-title">Habitación 4, Doble - King</h5>
+                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
                                 <p>CL$ 40000</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
@@ -82,8 +81,8 @@
                         <div class="card h-100" style="width: 18rem;">
                             <img class=class="card-img-top" src="assets/img/h5.png" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Habitación 5, Simple</h5>
-                                <p class="card-text">Habitación clásica con cama extragrande, vistas al océano y balcón</p>
+                                <h5 class="card-title">Habitación 5, Doble - King</h5>
+                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
                                 <p>CL$ 50000</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
@@ -97,8 +96,8 @@
                         <div class="card h-100" style="width: 18rem;">
                             <img class=class="card-img-top" src="assets/img/h5.png" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Habitación 6, Simple</h5>
-                                <p class="card-text">Habitación clásica con cama extragrande, vistas al océano y balcón</p>
+                                <h5 class="card-title">Habitación 6, Doble - King</h5>
+                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
                                 <p>CL$ 60000</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
@@ -112,8 +111,8 @@
                         <div class="card h-100" style="width: 18rem;">
                             <img class=class="card-img-top" src="assets/img/h4.png" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Habitación 7, Simple</h5>
-                                <p class="card-text">Habitación clásica con cama extragrande, vistas al océano y balcón</p>
+                                <h5 class="card-title">Habitación 7, Doble - King</h5>
+                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
                                 <p>CL$ 70000</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault7">
@@ -127,8 +126,8 @@
                         <div class="card h-100" style="width: 18rem;">
                             <img class=class="card-img-top" src="assets/img/h3.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Habitación 8, Simple</h5>
-                                <p class="card-text">Habitación clásica con cama extragrande, vistas al océano y balcón</p>
+                                <h5 class="card-title">Habitación 8, Doble - King</h5>
+                                <p class="card-text">Suite Executive en planta superior con cama extragrande y vistas al oceano</p>
                                 <p>CL$ 80000</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8">
@@ -189,16 +188,12 @@
             </div>
             <!-- Línea horizontal -->
             <hr>
-
             <!-- Botón de enviar solicitud de compra -->
             <div class="d-flex">
                 <button type="submit" class="btn btn-primary">Enviar Solicitud de Compra</button>
             </div>
         </section>
     </form>
-
-
-
 </main>
 <%@include file="assets/html/footer.jsp"%>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
